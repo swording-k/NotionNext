@@ -12,41 +12,45 @@ export default function Header(props) {
   const { siteInfo } = props
 
   return (
-    <header className='text-center justify-between items-center px-6 bg-white h-80 dark:bg-black relative z-10'>
-      <div className='float-none inline-block py-12'>
+    <header className='skyler-blog-hero relative z-10 overflow-hidden px-6'>
+      <div className='skyler-blog-hero-bg' aria-hidden='true' />
+      <div className='skyler-blog-hero-inner mx-auto flex max-w-6xl flex-col gap-8 py-16 md:flex-row md:items-end md:justify-between md:py-20'>
         <SmartLink href='/'>
-          {/* 可使用一张单图作为logo */}
-          <div className='flex space-x-6 justify-center'>
-            <div className='hover:rotate-45 hover:scale-125 transform duration-200 cursor-pointer justify-center items-center flex'>
+          <div className='flex max-w-3xl flex-col gap-6 md:flex-row md:items-center'>
+            <div className='skyler-avatar-wrap'>
               <LazyImage
                 priority={true}
-                src={siteInfo?.icon}
-                className='rounded-full'
-                width={100}
-                height={100}
+                src='/skyler-avatar.jpg'
+                className='skyler-avatar rounded-full'
+                width={116}
+                height={116}
                 alt={siteConfig('AUTHOR')}
               />
             </div>
 
-            <div className='flex-col flex justify-center'>
-              <div className='text-2xl font-serif dark:text-white py-2 hover:scale-105 transform duration-200'>
-                {siteConfig('AUTHOR')}
-              </div>
+            <div className='flex flex-col gap-4'>
+              <div className='skyler-kicker'>Skyler Yang / AI Product Notes</div>
+              <h1 className='skyler-blog-title'>
+                {siteInfo?.title || siteConfig('AUTHOR')}
+              </h1>
               <div
-                className='font-light dark:text-white py-2 hover:scale-105 transform duration-200 text-center'
+                className='skyler-blog-description'
                 dangerouslySetInnerHTML={{
                   __html: siteConfig('SIMPLE_LOGO_DESCRIPTION', null, CONFIG)
                 }}
               />
+              <p className='skyler-blog-summary'>
+                {siteInfo?.description || siteConfig('DESCRIPTION')}
+              </p>
             </div>
           </div>
         </SmartLink>
 
-        <div className='flex justify-center'>
-          <SocialButton />
-        </div>
-        <div className='text-xs mt-4 text-gray-500 dark:text-gray-300'>
-          {siteConfig('DESCRIPTION')}
+        <div className='skyler-hero-side'>
+          <div className='skyler-hero-pill'>Notion 写作 · NotionNext 发布</div>
+          <div className='flex justify-start md:justify-end'>
+            <SocialButton />
+          </div>
         </div>
       </div>
     </header>
