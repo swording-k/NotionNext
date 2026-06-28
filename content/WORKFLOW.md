@@ -1,105 +1,52 @@
 # 内容发布工作流
 
-这套工作流把本地 Markdown 作为内容母版，把 Notion、微信公众号、抖音和小红书作为分发端。
+这套工作流的原则是：平台优先，博客精选。
 
-## 角色分工
-
-- 本地 Markdown：主稿源文件，长期保存、可版本管理、可直接上传抖音。
-- Notion：个人博客内容数据库，NotionNext 从这里读取文章。
-- ObsidianToMP：微信公众号草稿箱同步工具。
-- 小红书：优先通过微信公众号绑定同步；不单独维护主稿。
-- 抖音：手动上传 Markdown 长文。
+公众号、小红书、知乎、抖音负责被看见；个人博客负责沉淀代表作、作品集和个人品牌主页。不是每篇文章都必须同步到博客，只有重要文章、系列文章、长期有价值的文章才进入 NotionNext。
 
 ## 固定目录
 
 ```text
 content/
-├─ publish/                 # 最终主稿 Markdown
-├─ review/                  # 平台改写稿、待审稿
-├─ inbox/                   # 选题卡和初稿
-├─ assets/                  # 每篇文章的封面和正文配图
-├─ .obsidiantomp/           # ObsidianToMP 队列请求和结果
-└─ WORKFLOW.md              # 本文档
+├─ inbox/       # 选题卡、粗略想法、待写稿
+├─ publish/     # 最终 Markdown 主稿
+├─ review/      # 平台改写稿、标题备选、发布检查
+├─ assets/      # 每篇文章的本地配图源文件
+└─ WORKFLOW.md  # 本工作流
+
+public/images/articles/
+└─ <slug>/      # 需要给博客使用的线上图片
 ```
 
-每篇文章建议使用：
+临时文件不进入版本库：
 
 ```text
-content/publish/YYYY-MM-DD-slug.md
-content/assets/slug/
+content/.obsidiantomp/publish-request.json
+content/.obsidiantomp/publish-result.json
+.obsidian/
 ```
 
-当前文章使用：
+## 下次使用口令
+
+用户可以直接说：
 
 ```text
-content/publish/apple-price-macbook-worth.md
-content/assets/apple-price-macbook-worth/
+按我们的内容发布工作流，把这个想法写成文章。
 ```
 
-## 标准流程
+如果用户没有特别说明，Codex 默认执行轻量主流程：
 
-1. 用户给想法和观点。
-2. Codex 先写高质量 Markdown 主稿，放入 `content/publish/`。
-3. Codex 为文章生成或整理配图，放入 `content/assets/<slug>/`，并在 Markdown 中引用。
-4. Codex 将同一篇主稿同步到 Notion 数据库，先设为 `Draft`。
-5. 用户确认后，Codex 将 Notion 页面状态改为 `Published`。
-6. Codex 通过 ObsidianToMP 队列命令保存到微信公众号草稿箱。
-7. 抖音由用户手动上传同一份 Markdown。
-8. 小红书通过微信公众号绑定同步，或需要时再生成单独小红书版。
+1. 根据想法写成高质量 Markdown 主稿，保存到 `content/publish/`。
+2. 生成或整理封面和正文配图，保存到 `content/assets/<slug>/`。
+3. 准备微信公众号草稿，通过 ObsidianToMP 保存到公众号草稿箱。
+4. 给出抖音、小红书、知乎可用的标题或摘要改写。
+5. 只有文章适合作为长期代表作时，才同步到 NotionNext 个人博客。
 
-## NotionNext 博客发布
+如果用户明确说“也发布到博客”，Codex 执行博客流程。
 
-Notion 数据库字段约定：
+## 公众号流程
 
-```text
-title       文章标题
-type        Post
-status      Draft / Published
-slug        URL slug
-category    分类
-tags        标签
-summary     摘要
-date        发布日期
-icon        图标
-```
-
-注意：Notion 改为 `Published` 只代表内容源已发布。
-
-当前个人博客部署在 Vercel：
-
-```text
-https://baojian-notionnext-blog.vercel.app/
-```
-
-当前项目使用 `EXPORT=true` 静态导出。也就是说，NotionNext 会在 Vercel 构建时读取 Notion 数据库，并把当时的文章生成成静态页面；Notion 里新增或修改文章之后，公开网站不会凭空自动变，需要重新触发一次 Vercel 部署。
-
-Vercel 必须配置环境变量：
-
-```text
-NOTION_PAGE_ID=5bb47fa431e34798a9200b40e1f7dc81
-```
-
-部署命令：
-
-```bash
-npx --yes vercel@latest deploy --prod --yes --scope skyler-s-projects2
-```
-
-本次文章的 Notion 页面：
-
-```text
-https://app.notion.com/p/38c660f59d21816899b7f6ea5714d6c4
-```
-
-本次公开站点检查：
-
-```text
-https://baojian-notionnext-blog.vercel.app/article/apple-price-macbook-worth
-```
-
-截至本工作流固化时，该公开 URL 返回 200，首页也能看到新文章。
-
-## 微信公众号发布
+公众号是当前主要发布端。
 
 ObsidianToMP 配置位置：
 
@@ -107,22 +54,15 @@ ObsidianToMP 配置位置：
 .obsidian/plugins/obsidian-to-mp/data.json
 ```
 
-必须配置：
-
-```text
-公众号名称 | AppID | AppSecret
-```
-
-本次账号：
+已配置账号：
 
 ```text
 宝剑Skyler
-wxaa8a6f4cea86b268
 ```
 
-不要把 AppSecret 写入聊天记录。
+不要把 AppSecret 写入聊天记录或版本库。
 
-队列请求文件：
+每次发布时，Codex 临时生成：
 
 ```text
 content/.obsidiantomp/publish-request.json
@@ -134,18 +74,10 @@ content/.obsidiantomp/publish-request.json
 obsidian vault="baojian-notionnext-blog" command id="obsidian-to-mp:obsidian-to-mp-publish-queued-draft"
 ```
 
-结果文件：
+检查结果：
 
 ```text
 content/.obsidiantomp/publish-result.json
-```
-
-本次成功结果：
-
-```text
-ok: true
-status: success
-media_id: T_idYMTCh4L08PLOE6NeYMyMSZQrDwwrUsV6K7S94aJFq1ExqQrJghDJli_0iPt_
 ```
 
 常见错误：
@@ -154,46 +86,112 @@ media_id: T_idYMTCh4L08PLOE6NeYMyMSZQrDwwrUsV6K7S94aJFq1ExqQrJghDJli_0iPt_
 - `水印图片不存在`：清空 ObsidianToMP 的水印设置，或填入真实图片路径。
 - `请先在 ObsidianToMP 设置中保存公众号信息`：公众号 AppID/AppSecret 未保存。
 
-## 平台策略
+## 个人博客流程
 
-微信公众号：
-
-```text
-走 ObsidianToMP 插件同步，不走网页手动发布。
-```
-
-小红书：
+个人博客使用 NotionNext：
 
 ```text
-优先绑定微信公众号同步，不维护另一套主稿。
+https://baojian-notionnext-blog.vercel.app/
 ```
 
-抖音：
+NotionNext 的作用：
 
 ```text
-用户手动上传 content/publish/ 下的 Markdown。
+Notion 数据库
+-> Vercel 构建
+-> NotionNext 读取 Published 文章
+-> 生成静态博客页面
 ```
 
-个人博客：
+当前项目是 `EXPORT=true` 静态导出。Notion 里新增或修改文章后，公开网站不会自动变化，必须重新部署 Vercel。
+
+Vercel 必须配置：
 
 ```text
-Codex 写入 Notion 数据库并设置 Published；随后执行 Vercel 生产部署；最后检查公开 URL 是否返回 200。
+NOTION_PAGE_ID=5bb47fa431e34798a9200b40e1f7dc81
 ```
 
-## 下次使用口令
+部署命令：
 
-用户可以直接说：
+```bash
+npx --yes vercel@latest deploy --prod --yes --scope skyler-s-projects2
+```
+
+发布后必须检查公开 URL 是否返回 200。
+
+## 博客封面规则
+
+NotionNext 读取的是 Notion 页面的 Cover，不读取 Markdown frontmatter 里的本地 `封面` 字段。
+
+所以博客封面的固定做法是：
+
+1. 把封面图片保存到 `content/assets/<slug>/cover.png`。
+2. 复制一份到 `public/images/articles/<slug>/cover.png`。
+3. 部署 Vercel，让图片拥有线上地址。
+4. 把 Notion 文章 Cover 设置为：
 
 ```text
-按我们的内容发布工作流，把这个想法写成文章并发布到博客和公众号草稿。
+https://baojian-notionnext-blog.vercel.app/images/articles/<slug>/cover.png
 ```
 
-Codex 应按以下顺序执行：
+## 评论留言
 
-1. 写 Markdown 主稿和配图。
-2. 写入 Notion，先 Draft，确认后 Published。
-3. 生成或更新 ObsidianToMP 队列请求。
-4. 触发 ObsidianToMP 保存公众号草稿。
-5. 检查 `publish-result.json`。
-6. 明确说明个人博客是否已经在公开 URL 可见；不可见时说明是否需要部署。
-7. 若部署日志里出现 NotionNext 官方示例库或演示文章，优先检查 Vercel 的 `NOTION_PAGE_ID` 环境变量。
+NotionNext 支持评论，但不是开箱即用的“后台留言系统”。当前代码支持：
+
+```text
+Twikoo
+Giscus
+Waline
+Gitalk
+Cusdis
+Utterances
+Artalk
+WebMention
+```
+
+建议优先选择 Giscus 或 Twikoo：
+
+- Giscus：依赖 GitHub Discussions，适合技术/作品集型博客，维护成本低。
+- Twikoo：更像传统评论系统，需要部署后端，适合中文博客体验。
+
+短期建议先不开评论。公众号、小红书、知乎本身有评论区，独立博客先承担“精选档案馆”和“个人主页”的角色。
+
+## 外链策略
+
+可以在微信公众号、知乎、小红书正文或文末附上原文链接，但不要一上来就把读者导走。
+
+推荐文案：
+
+```text
+原文与长期更新版：
+https://baojian-notionnext-blog.vercel.app/article/<slug>
+```
+
+对流量的影响：
+
+- 公众号：文中外链能力受平台限制，文末放原文链接通常不会明显伤害阅读，反而能建立个人主页心智。
+- 知乎：可以放原文链接，但不要让回答看起来像纯导流。
+- 小红书：外链不友好，优先引导关注公众号或个人主页，不强塞 URL。
+- 抖音长文：保留平台内阅读体验即可，原文链接可放简介或评论区视情况处理。
+
+原则：平台文章要在平台内完整可读，个人博客链接作为“长期版本”和“个人主页入口”，不要把它当主要转化按钮。
+
+## 当前文章记录
+
+文章：
+
+```text
+content/publish/apple-price-macbook-worth.md
+```
+
+博客地址：
+
+```text
+https://baojian-notionnext-blog.vercel.app/article/apple-price-macbook-worth
+```
+
+Notion 页面：
+
+```text
+https://app.notion.com/p/38c660f59d21816899b7f6ea5714d6c4
+```
