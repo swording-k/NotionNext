@@ -65,8 +65,25 @@ icon        图标
 
 注意：Notion 改为 `Published` 只代表内容源已发布。
 
-如果个人博客是 Vercel/SSR/ISR 部署，通常会在缓存刷新后自动显示。  
-如果个人博客是 GitHub Pages 静态导出，则还需要重新构建并部署站点。
+当前个人博客部署在 Vercel：
+
+```text
+https://baojian-notionnext-blog.vercel.app/
+```
+
+当前项目使用 `EXPORT=true` 静态导出。也就是说，NotionNext 会在 Vercel 构建时读取 Notion 数据库，并把当时的文章生成成静态页面；Notion 里新增或修改文章之后，公开网站不会凭空自动变，需要重新触发一次 Vercel 部署。
+
+Vercel 必须配置环境变量：
+
+```text
+NOTION_PAGE_ID=5bb47fa431e34798a9200b40e1f7dc81
+```
+
+部署命令：
+
+```bash
+npx --yes vercel@latest deploy --prod --yes --scope skyler-s-projects2
+```
 
 本次文章的 Notion 页面：
 
@@ -77,10 +94,10 @@ https://app.notion.com/p/38c660f59d21816899b7f6ea5714d6c4
 本次公开站点检查：
 
 ```text
-https://swording-k.github.io/apple-price-macbook-worth
+https://baojian-notionnext-blog.vercel.app/article/apple-price-macbook-worth
 ```
 
-截至本工作流固化时，该公开 URL 仍为 404，说明博客前端还未完成静态部署或真实访问地址需要进一步确认。
+截至本工作流固化时，该公开 URL 返回 200，首页也能看到新文章。
 
 ## 微信公众号发布
 
@@ -160,7 +177,7 @@ media_id: T_idYMTCh4L08PLOE6NeYMyMSZQrDwwrUsV6K7S94aJFq1ExqQrJghDJli_0iPt_
 个人博客：
 
 ```text
-Codex 写入 Notion 数据库并设置 Published；如果公开站点未更新，再执行站点部署。
+Codex 写入 Notion 数据库并设置 Published；随后执行 Vercel 生产部署；最后检查公开 URL 是否返回 200。
 ```
 
 ## 下次使用口令
@@ -179,3 +196,4 @@ Codex 应按以下顺序执行：
 4. 触发 ObsidianToMP 保存公众号草稿。
 5. 检查 `publish-result.json`。
 6. 明确说明个人博客是否已经在公开 URL 可见；不可见时说明是否需要部署。
+7. 若部署日志里出现 NotionNext 官方示例库或演示文章，优先检查 Vercel 的 `NOTION_PAGE_ID` 环境变量。

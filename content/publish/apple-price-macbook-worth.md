@@ -6,7 +6,7 @@
 样式: "obsidian-light"
 代码高亮: "默认"
 封面: "content/assets/apple-price-macbook-worth/cover.png"
-slug: "apple-price-macbook-worth"
+slug: "article/apple-price-macbook-worth"
 category: "Product Notes"
 tags: ["AI", "自媒体", "生产力工具"]
 date: "2026-06-27"
