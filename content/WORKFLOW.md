@@ -48,6 +48,32 @@ content/.obsidiantomp/publish-result.json
 
 公众号是当前主要发布端。
 
+当前 ObsidianToMP 是本地直连微信公众号 API。微信公众号接口会校验调用方公网 IP，因此这台 Mac 的出口 IP 一旦变化，就会出现：
+
+```text
+invalid ip ... not in whitelist
+```
+
+这不是稳定工作流。它只适合临时发布或调试。
+
+稳定方案是固定一个“公众号发布网关”：
+
+```text
+Codex/本地 Markdown
+-> 固定公网 IP 的云服务器或发布服务
+-> 微信公众号 API
+-> 公众号草稿箱
+```
+
+只需要把云服务器的固定公网 IP 加入公众号后台白名单一次。以后无论本地网络怎么变，真正调用微信 API 的都是这台固定 IP 机器。
+
+在发布网关没有搭好之前，公众号发布有两个选择：
+
+1. 临时自动化：每次 IP 变化时，手动把当前出口 IP 加入微信公众号白名单。
+2. 稳定人工：Codex 写好 Markdown，用户在公众号后台网页端复制排版发布，不走 API。
+
+长期推荐使用固定 IP 发布网关，不推荐反复维护本机动态 IP 白名单。
+
 ObsidianToMP 配置位置：
 
 ```text
@@ -82,7 +108,7 @@ content/.obsidiantomp/publish-result.json
 
 常见错误：
 
-- `invalid ip ... not in whitelist`：去微信公众号后台 `设置与开发 -> 开发接口管理 -> IP白名单` 添加当前出口 IP。
+- `invalid ip ... not in whitelist`：当前调用微信 API 的公网 IP 不在白名单。临时处理是添加当前 IP；长期处理是改用固定 IP 发布网关。
 - `水印图片不存在`：清空 ObsidianToMP 的水印设置，或填入真实图片路径。
 - `请先在 ObsidianToMP 设置中保存公众号信息`：公众号 AppID/AppSecret 未保存。
 
