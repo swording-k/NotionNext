@@ -62,3 +62,8 @@ package-lock.json
 .perf/
 tsconfig.tsbuildinfo
 webpack-internal:/
+
+# local writing/publishing tool state
+.obsidian/
+content/.obsidiantomp/publish-result.json
+content/.DS_Store

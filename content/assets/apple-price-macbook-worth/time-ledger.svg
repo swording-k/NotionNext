@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1600" viewBox="0 0 1200 1600">
+  <rect width="1200" height="1600" fill="#f7f7f2"/>
+  <text x="90" y="150" font-family="PingFang SC, Helvetica, Arial, sans-serif" font-size="42" fill="#4b5563">很多人只算价格</text>
+  <text x="90" y="245" font-family="PingFang SC, Helvetica, Arial, sans-serif" font-size="82" font-weight="800" fill="#101827">但真正该算的是</text>
+  <text x="90" y="350" font-family="PingFang SC, Helvetica, Arial, sans-serif" font-size="82" font-weight="800" fill="#101827">时间账本</text>
+  <rect x="88" y="455" width="1024" height="260" rx="34" fill="#ffffff" stroke="#dde2de" stroke-width="2"/>
+  <text x="134" y="535" font-family="PingFang SC, Helvetica, Arial, sans-serif" font-size="36" font-weight="700" fill="#111827">看得见的成本</text>
+  <text x="134" y="610" font-family="PingFang SC, Helvetica, Arial, sans-serif" font-size="54" font-weight="800" fill="#b45309">购买价格</text>
+  <text x="134" y="665" font-family="PingFang SC, Helvetica, Arial, sans-serif" font-size="28" fill="#6b7280">付款那一刻最明显，也最容易被放大。</text>
+  <rect x="88" y="775" width="1024" height="390" rx="34" fill="#111827"/>
+  <text x="134" y="855" font-family="PingFang SC, Helvetica, Arial, sans-serif" font-size="36" font-weight="700" fill="#ffffff">更大的隐性成本</text>
+  <g fill="#ffffff" opacity="0.94" font-family="PingFang SC, Helvetica, Arial, sans-serif" font-size="42" font-weight="700">
+    <text x="134" y="950">分心</text>
+    <text x="354" y="950">低效</text>
+    <text x="574" y="950">割裂</text>
+    <text x="794" y="950">启动阻力</text>
+  </g>
+  <g fill="#a7f3d0" font-family="PingFang SC, Helvetica, Arial, sans-serif" font-size="29">
+    <text x="134" y="1036">每一次被打断</text>
+    <text x="354" y="1036">每一次切换工具</text>
+    <text x="574" y="1036">每一次找文件</text>
+    <text x="794" y="1036">每一次不想开始</text>
+  </g>
+  <rect x="88" y="1240" width="1024" height="210" rx="34" fill="#e7efe9"/>
+  <text x="134" y="1320" font-family="PingFang SC, Helvetica, Arial, sans-serif" font-size="38" font-weight="800" fill="#111827">好工具的价值</text>
+  <text x="134" y="1395" font-family="PingFang SC, Helvetica, Arial, sans-serif" font-size="44" font-weight="800" fill="#166534">把时间从消耗里拉回创造</text>
+</svg>
