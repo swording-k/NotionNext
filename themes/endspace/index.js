@@ -5,6 +5,7 @@ import replaceSearchResult from '@/components/Mark'
 import NotionPage from '@/components/NotionPage'
 import ShareBar from '@/components/ShareBar'
 import SmartLink from '@/components/SmartLink'
+import SocialQrPanel from '@/components/SocialQrPanel'
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import { isBrowser } from '@/lib/utils'
@@ -130,6 +131,11 @@ const LayoutBase = (props) => {
               >
                 {props.slotTop}
                 {children}
+                {!fullWidth && (
+                  <div className="mt-8">
+                    <SocialQrPanel variant="endspace" compact />
+                  </div>
+                )}
               </Transition>
             </div>
             

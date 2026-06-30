@@ -1,5 +1,6 @@
 import Announcement from './Announcement'
 import Catalog from './Catalog'
+import SocialQrPanel from '@/components/SocialQrPanel'
 
 /**
  * 侧边栏
@@ -11,6 +12,8 @@ export default function SideBar (props) {
   return (<>
 
             <Catalog {...props} />
+
+            <SocialQrPanel compact />
 
             <Announcement post={notice} />
 

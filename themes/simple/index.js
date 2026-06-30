@@ -1,6 +1,7 @@
 import { AdSlot } from '@/components/GoogleAdsense'
 import replaceSearchResult from '@/components/Mark'
 import NotionPage from '@/components/NotionPage'
+import SocialQrPanel from '@/components/SocialQrPanel'
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import { isBrowser } from '@/lib/utils'
@@ -107,6 +108,12 @@ const LayoutBase = props => {
               {slotTop}
 
               {children}
+
+              {!fullWidth && (
+                <div className='mt-10 xl:hidden'>
+                  <SocialQrPanel compact />
+                </div>
+              )}
             </Transition>
             <AdSlot type='native' />
           </div>

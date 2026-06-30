@@ -1,5 +1,6 @@
 // import { siteConfig } from '@/lib/config'
 import SmartLink from '@/components/SmartLink'
+import SocialQrPanel from '@/components/SocialQrPanel'
 import TimeFillIcon from 'remixicon-react/TimeFillIcon'
 import FolderFillIcon from 'remixicon-react/FolderFillIcon'
 import PriceTag3FillIcon from 'remixicon-react/PriceTag3FillIcon'
@@ -15,6 +16,8 @@ export const SideBar = (props) => {
 
   return (
     <aside className="space-y-8 max-h-[calc(100vh-8rem)] overflow-y-auto overflow-x-hidden" style={{ scrollbarWidth: 'thin' }}>
+      <SocialQrPanel variant="endspace" compact />
+
       {/* Latest Posts (Minimalist List) */}
       {latestPosts && latestPosts.length > 0 && (
         <div className="p-2">
