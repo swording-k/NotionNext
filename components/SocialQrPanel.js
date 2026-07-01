@@ -45,8 +45,9 @@ function SocialIcon({ kind }) {
   if (kind === 'xiaohongshu') {
     return (
       <svg viewBox='0 0 24 24' aria-hidden='true'>
-        <rect x='3' y='3' width='18' height='18' rx='5' />
-        <path d='M7.1 9.2h9.8M8.2 12h7.6M9.2 14.8h5.6' />
+        <path d='M6.2 4.2h11.6c1 0 1.8.8 1.8 1.8v12c0 1-.8 1.8-1.8 1.8H6.2c-1 0-1.8-.8-1.8-1.8V6c0-1 .8-1.8 1.8-1.8Z' />
+        <path d='M8 8.2h8M8 11.4h8M8 14.6h4.8' />
+        <path d='M15.6 15.1l1.2 1.2 2.1-2.7' />
       </svg>
     )
   }
@@ -87,13 +88,9 @@ export default function SocialQrPanel({ variant = 'simple', compact = false }) {
   const cardClass = isEndspace
     ? 'border-[var(--endspace-border-base)] bg-[var(--endspace-bg-secondary)] hover:border-[var(--endspace-border-active)]'
     : 'rounded-lg border-gray-200 bg-white shadow-sm hover:border-gray-300 hover:bg-gray-50 dark:border-gray-800 dark:bg-gray-950 dark:hover:border-gray-700 dark:hover:bg-gray-900'
-  const iconClass = {
-    wechat: 'bg-[#1aad19]',
-    xiaohongshu: 'bg-[#ff2442]',
-    douyin: 'bg-gradient-to-br from-[#00f2ea] via-black to-[#ff0050]',
-    bilibili: 'bg-[#00aeec]',
-    site: 'bg-gray-800 dark:bg-gray-200 dark:text-gray-950'
-  }
+  const iconClass = isEndspace
+    ? 'border border-cyan-100/15 bg-cyan-50/[0.04] text-cyan-200/80 group-hover:border-cyan-200/40 group-hover:text-cyan-100'
+    : 'border border-slate-200 bg-slate-50 text-slate-500 group-hover:border-cyan-300/50 group-hover:text-cyan-600 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-300 dark:group-hover:text-cyan-300'
 
   return (
     <>
@@ -119,7 +116,7 @@ export default function SocialQrPanel({ variant = 'simple', compact = false }) {
             const content = (
               <>
                 <span
-                  className={`grid h-10 w-10 flex-none place-items-center rounded-full text-white [&_svg]:h-6 [&_svg]:w-6 [&_svg]:fill-current [&_svg]:stroke-current [&_svg]:stroke-[1.35] ${iconClass[item.kind]}`}>
+                  className={`grid h-9 w-9 flex-none place-items-center rounded-lg transition [&_svg]:h-5 [&_svg]:w-5 [&_svg]:fill-none [&_svg]:stroke-current [&_svg]:stroke-[1.65] ${iconClass}`}>
                   <SocialIcon kind={item.kind} />
                 </span>
                 <span className='min-w-0'>
@@ -136,7 +133,7 @@ export default function SocialQrPanel({ variant = 'simple', compact = false }) {
             if (item.kind === 'wechat') {
               return (
                 <button
-                  className={`flex w-full items-center gap-3 border p-3 text-left transition ${cardClass}`}
+                  className={`group flex w-full items-center gap-3 border p-3 text-left transition ${cardClass}`}
                   type='button'
                   key={item.name}
                   onClick={() => setWechatOpen(true)}>
@@ -147,7 +144,7 @@ export default function SocialQrPanel({ variant = 'simple', compact = false }) {
 
             return (
               <a
-                className={`flex items-center gap-3 border p-3 no-underline transition ${cardClass}`}
+                className={`group flex items-center gap-3 border p-3 no-underline transition ${cardClass}`}
                 href={item.href}
                 target='_blank'
                 rel='noreferrer'
