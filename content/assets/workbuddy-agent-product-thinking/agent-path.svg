@@ -1,0 +1,38 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" fill="#F8FAFC"/>
+  <text x="72" y="76" font-family="Arial, sans-serif" font-size="36" font-weight="800" fill="#111827">Two product paths</text>
+  <text x="72" y="116" font-family="Arial, sans-serif" font-size="22" fill="#64748B">Traditional products optimize what users click. Agent products optimize what agents can read, choose, and execute.</text>
+  <rect x="72" y="164" width="488" height="452" rx="24" fill="#FFFFFF" stroke="#D8DEE8" stroke-width="2"/>
+  <rect x="640" y="164" width="488" height="452" rx="24" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="2"/>
+  <text x="112" y="220" font-family="Arial, sans-serif" font-size="30" font-weight="800" fill="#111827">ToC product path</text>
+  <text x="680" y="220" font-family="Arial, sans-serif" font-size="30" font-weight="800" fill="#1D4ED8">To Agent product path</text>
+  <g font-family="Arial, sans-serif" font-size="24" fill="#111827">
+    <rect x="112" y="264" width="360" height="58" rx="14" fill="#E5E7EB"/>
+    <text x="140" y="302">show features</text>
+    <rect x="112" y="348" width="360" height="58" rx="14" fill="#E5E7EB"/>
+    <text x="140" y="386">let users choose</text>
+    <rect x="112" y="432" width="360" height="58" rx="14" fill="#E5E7EB"/>
+    <text x="140" y="470">shorten clicks</text>
+    <rect x="112" y="516" width="360" height="58" rx="14" fill="#E5E7EB"/>
+    <text x="140" y="554">optimize conversion</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="24" fill="#1E3A8A">
+    <rect x="680" y="264" width="360" height="58" rx="14" fill="#DBEAFE"/>
+    <text x="708" y="302">make context readable</text>
+    <rect x="680" y="348" width="360" height="58" rx="14" fill="#DBEAFE"/>
+    <text x="708" y="386">make tools discoverable</text>
+    <rect x="680" y="432" width="360" height="58" rx="14" fill="#DBEAFE"/>
+    <text x="708" y="470">define permissions</text>
+    <rect x="680" y="516" width="360" height="58" rx="14" fill="#DBEAFE"/>
+    <text x="708" y="554">deliver traceable output</text>
+  </g>
+  <path d="M512 293 H590" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M590 293 L570 280 M590 293 L570 306" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M512 377 H590" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M590 377 L570 364 M590 377 L570 390" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M512 461 H590" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M590 461 L570 448 M590 461 L570 474" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M512 545 H590" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M590 545 L570 532 M590 545 L570 558" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+  <text x="72" y="674" font-family="Arial, sans-serif" font-size="24" fill="#334155">The shift: from arranging choices for humans to arranging executable context for agents.</text>
+</svg>
