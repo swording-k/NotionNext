@@ -14,19 +14,19 @@ content/publish/ai-digital-employee-workflow-gap-platform.md
 
 ## 标题备选
 
-1. AI 不是没有提效，是你还没把它培养成数字员工
+1. 把 AI 培养成数字员工，才是真正的提效
 2. 为什么很多单位买了 AI，却还是用不起来
-3. AI 真正拉开差距的地方，不是会不会提问
+3. AI 真正拉开差距的地方，在工作流
 4. 别再问 AI 有没有用了，先问你有没有给它工作流
 5. 央国企的 AI 焦虑，本质是工作流焦虑
 
 推荐标题：
 
 ```text
-AI 不是没有提效，是你还没把它培养成数字员工
+把 AI 培养成数字员工，才是真正的提效
 ```
 
-理由：标题有判断、有反常识，也避免直接攻击某类组织；适合公众号和知乎。
+理由：标题有判断，表达更直接，也避免直接攻击某类组织；适合公众号和知乎。
 
 ## 敏感边界
 
@@ -42,6 +42,8 @@ AI 不是没有提效，是你还没把它培养成数字员工
 - McKinsey 生成式 AI 经济潜力：`https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier`
 - St. Louis Fed 生成式 AI 采用报告：`https://www.stlouisfed.org/on-the-economy/2025/nov/state-generative-ai-adoption-2025`
 - 新华网央企 AI+：`https://www.news.cn/fortune/20250923/a9fe2e22b55c4672b529be20ff446652/c.html`
+- 新华网 OPC/超级个体：`https://app.xinhuanet.com/news/article.html?articleId=2026070342d51a32939c4faf95158e58cf144b87`
+- 华为 OPC 产业赋能解决方案：`https://e.huawei.com/cn/news/2026/industries/government/opc-industry-empowerment-solution`
 
 ## 平台建议
 
@@ -58,7 +60,7 @@ AI 不是没有提效，是你还没把它培养成数字员工
 小红书：
 
 - 建议拆成 6-8 张卡片：
-  - AI 不是没有提效
+  - AI 提效的关键是工作流
   - 很多人还停在低阶使用
   - 数字员工不是买来就能干活
   - 工作流才是关键
