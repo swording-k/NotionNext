@@ -44,6 +44,7 @@ content/publish/ai-digital-employee-workflow-gap-platform.md
 - 新华网央企 AI+：`https://www.news.cn/fortune/20250923/a9fe2e22b55c4672b529be20ff446652/c.html`
 - 新华网 OPC/超级个体：`https://app.xinhuanet.com/news/article.html?articleId=2026070342d51a32939c4faf95158e58cf144b87`
 - 华为 OPC 产业赋能解决方案：`https://e.huawei.com/cn/news/2026/industries/government/opc-industry-empowerment-solution`
+- 尚晶 SJ / WorkBuddy 访谈 OPT 概念：`https://mp.weixin.qq.com/s/BIlAyVEOIkX5hWAD6qDa6w`
 
 ## 平台建议
 
