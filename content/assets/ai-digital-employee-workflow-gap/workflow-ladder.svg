@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#f7f8fa"/>
+  <text x="80" y="88" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800" fill="#111827">AI 使用方式的分水岭</text>
+  <text x="80" y="128" font-family="Inter, Arial, sans-serif" font-size="22" fill="#5b6472">不是会不会提问，而是有没有工作流、知识库和交付闭环。</text>
+  <g transform="translate(88 190)">
+    <rect x="0" y="0" width="260" height="360" rx="16" fill="#ffffff" stroke="#d9e0ea" stroke-width="2"/>
+    <text x="32" y="56" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" fill="#111827">低阶使用</text>
+    <text x="32" y="105" font-family="Inter, Arial, sans-serif" font-size="22" fill="#4b5563">一次性提问</text>
+    <text x="32" y="154" font-family="Inter, Arial, sans-serif" font-size="22" fill="#4b5563">临时写材料</text>
+    <text x="32" y="203" font-family="Inter, Arial, sans-serif" font-size="22" fill="#4b5563">人来搬运结果</text>
+    <text x="32" y="252" font-family="Inter, Arial, sans-serif" font-size="22" fill="#4b5563">每次从零开始</text>
+    <rect x="32" y="292" width="196" height="42" rx="10" fill="#eef2f7"/>
+    <text x="54" y="320" font-family="Inter, Arial, sans-serif" font-size="18" fill="#4b5563">AI = 聪明工具</text>
+  </g>
+  <g transform="translate(470 190)">
+    <rect x="0" y="0" width="260" height="360" rx="16" fill="#ffffff" stroke="#d9e0ea" stroke-width="2"/>
+    <text x="32" y="56" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" fill="#111827">中阶使用</text>
+    <text x="32" y="105" font-family="Inter, Arial, sans-serif" font-size="22" fill="#4b5563">固定模板</text>
+    <text x="32" y="154" font-family="Inter, Arial, sans-serif" font-size="22" fill="#4b5563">项目知识库</text>
+    <text x="32" y="203" font-family="Inter, Arial, sans-serif" font-size="22" fill="#4b5563">部分自动化</text>
+    <text x="32" y="252" font-family="Inter, Arial, sans-serif" font-size="22" fill="#4b5563">人工验收</text>
+    <rect x="32" y="292" width="196" height="42" rx="10" fill="#e7f0ff"/>
+    <text x="54" y="320" font-family="Inter, Arial, sans-serif" font-size="18" fill="#2656a3">AI = 工作助手</text>
+  </g>
+  <g transform="translate(852 190)">
+    <rect x="0" y="0" width="260" height="360" rx="16" fill="#ffffff" stroke="#4f8df7" stroke-width="3"/>
+    <text x="32" y="56" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" fill="#111827">高阶使用</text>
+    <text x="32" y="105" font-family="Inter, Arial, sans-serif" font-size="22" fill="#4b5563">工具调用</text>
+    <text x="32" y="154" font-family="Inter, Arial, sans-serif" font-size="22" fill="#4b5563">任务闭环</text>
+    <text x="32" y="203" font-family="Inter, Arial, sans-serif" font-size="22" fill="#4b5563">自动检查</text>
+    <text x="32" y="252" font-family="Inter, Arial, sans-serif" font-size="22" fill="#4b5563">持续反馈</text>
+    <rect x="32" y="292" width="196" height="42" rx="10" fill="#dceafe"/>
+    <text x="54" y="320" font-family="Inter, Arial, sans-serif" font-size="18" fill="#1f4690">AI = 数字员工</text>
+  </g>
+  <path d="M370 370 h72" stroke="#9aa8bb" stroke-width="5" stroke-linecap="round"/>
+  <path d="M442 370 l-22 -16M442 370 l-22 16" stroke="#9aa8bb" stroke-width="5" stroke-linecap="round"/>
+  <path d="M752 370 h72" stroke="#9aa8bb" stroke-width="5" stroke-linecap="round"/>
+  <path d="M824 370 l-22 -16M824 370 l-22 16" stroke="#9aa8bb" stroke-width="5" stroke-linecap="round"/>
+  <text x="80" y="632" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" fill="#111827">分水岭：有没有把 AI 放进真实业务系统里。</text>
+</svg>
